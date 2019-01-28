@@ -1,0 +1,148 @@
+/*START HOMEPAGE CSS HERE*/
+
+/*Header*/
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial;
+    margin: 0px;
+}
+
+.header{
+    padding: 60px;
+    text-align: center;
+    background: lightseagreen;
+    color: white;
+}
+
+/*Navigation */
+.navbar{
+    display: flex;
+    background: #333;
+}
+
+.navbar a{
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+.navbar a:hover{
+    background-color: #ddd;
+    color: black;
+}
+
+/*Column Container*/
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+/*Sidebar*/
+
+.side{
+   flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20%;
+}
+
+/*Main Column*/
+
+.main{
+    flex: 20%;
+    background-color: white;
+    padding: 20%;
+
+}
+
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 0%;
+}
+
+/*Footer*/
+
+.footer{
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+}
+
+@media screen and (max-width: 700px) {
+    .row .navbar {
+        flex-direction: column;
+    }
+}
+
+
+/*Start Gallery here*/
+
+.column{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+.column img{
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media (max-width: 800px) {
+    .column{
+        flex: 100%;
+        max-width:100%;
+    }
+}
+
+/*Start CONTACT PAGE*/
+
+input[type=text], select textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    direction: inline-block;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+.container{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25{
+    float: left;
+    width: 25%;
+    margin-top:6px;
+}
+.col-75 {
+    float: left;
+    width: 75%;
+    mamrgin-top: 6px;
+}
+
+/*Clear Floats*/
+
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and(max-width: 600px){
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
