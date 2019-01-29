@@ -1,0 +1,60 @@
+$font: 'Montserrat', sans-serif;
+
+$blue: #4285F4;
+$red:  #DB4437;
+$yellow: #F4B400;
+$green: #0F9D58;
+$colors-list: $blue $red $yellow $green;
+
+.google-loader {
+  display: block;
+  span {
+    display: inline-block;
+    margin-top: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    &:not(:first-child) { margin-left: 10px; }
+  }
+  @each $current-color in $colors-list {
+    $i: index($colors-list, $current-color);
+    $t: $i * -0.25;
+    span:nth-child(#{$i}) {
+      background: $current-color;
+      animation: move 1s ease-in-out (#{$t}s) infinite alternate;
+    }
+  }
+}
+
+@keyframes move {
+  from { transform: translateY(-10px); }
+  to { transform: translateY(5px); }
+}
+
+h1 {
+  font-family: $font;
+  font-size: 4em;
+  text-align: center;
+  letter-spacing: -8px;
+  margin-top: 0;
+  span {
+    &:first-child { color: $blue; }
+    &:nth-child(2) { color: $red; }
+    &:nth-child(3) { color: $yellow; }
+    &:nth-child(4) { color: $blue; }
+    &:nth-child(5) { color: $green; }
+    &:last-child {
+      color: $red;
+      transform: rotate(-20deg);
+      display: inline-block;
+    }
+  }
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
