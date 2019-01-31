@@ -1,0 +1,143 @@
+$font: bold 16px/30px "Helvetica Neue", sans-serif;
+$mono: "Roboto Mono", courier;
+$bg: white;
+$green: #00d158;
+$smoke: #5e5f56;
+$pink: #f5d8dd;
+$w: 10vw;
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.wrapper {
+  width: 800px;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+input[type="checkbox"] {
+  position: absolute;
+  left: -200vw;
+  visibility: hidden;
+
+  &:checked + .ht-ui-check {
+    &:before{
+      background: $pink;
+    }
+    .track {
+      background: linear-gradient(135deg,  #e66465 0%, #9198e5 80%);
+    }
+    .handle {
+      transform: translateX($w*1.055);
+      .faces {
+        transform: translateX(-$w*1.65);
+      }
+    }
+  }
+}
+
+.ht-ui-check {
+  width: $w*2.15;
+  height: $w*1.5;
+  cursor: pointer;
+  border-radius: $w;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #eee;
+    transition: 0.3s ease-out all;
+  }
+  .handle,
+  .track {
+    position: absolute;
+    z-index: 10;
+    transition: ease-out all 0.23s;
+    border-radius: $w;
+  }
+  .track {
+    display: block;
+    width: $w*2.15;
+    height: $w*1.25;
+    background: $smoke;
+  }
+  .handle {
+    display: block;
+    height: $w*.95;
+    width: $w*.95;
+    background: $bg;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.13);
+    transform: translateX($w*.15);
+    overflow: hidden;
+  }
+}
+.faces {
+  display: flex;
+  flex-wrap: nowrap;
+  width: $w*2;
+  font-size: $w*0.35;
+  justify-content: space-between;
+  transition: 0.3s ease-out all 0.1s;
+  user-select: none;
+  .sad {
+    position: relative;
+    top: $w*0.35;
+    left: $w*.1;
+    color: $smoke;
+    line-height: 1em;
+    .eyes {
+      display: flex;
+      div{
+        transform: rotate(45deg);
+      }
+    }
+    .mouth {
+      margin-left: 6px;
+      line-height: 0em;
+      font-weight: 400;
+    }
+  }
+  .happy {
+    color: $smoke;
+    position: relative;
+    top: $w*0.15;
+    left: $w*.5;
+    line-height: 0.85;
+    &:after{
+      content: "";
+      width: $w*.15;
+      height: $w*.15;
+      display: block;
+      position: absolute;
+      top: $w*.25;
+      left: -$w*.1;
+      border-radius: 50%;
+      background: $pink;
+    }
+    .eyes {
+      font-family: $mono;
+    }
+    .mouth {
+      margin-left: 0em;
+      margin-top: -$w*0.075;
+      transform: rotate(90deg);
+      font-weight: 300;
+      font-size: $w*0.45;
+    }
+  }
+}
