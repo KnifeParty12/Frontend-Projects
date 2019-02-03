@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+$shades-color: mix(black, white, 85%);
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+h1 {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 1.2rem;
+}
+#container {
+  width: 19.5rem;
+  height: 5rem;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  > div:not(#sunglasses){
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    z-index: 3;
+    &.top {
+      top: 0;
+    }
+    &.bottom {
+      bottom: 0;
+    }
+    &.left {
+      left: 0;
+    }
+    &.right {
+      right: 0;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .top.left:hover ~ #sunglasses {
+    transform: perspective(600px) rotateX(20deg) rotateY(-20deg);
+  }
+  .top.right:hover ~ #sunglasses {
+    transform: perspective(600px) rotateX(20deg) rotateY(20deg);
+  }
+  .bottom.left:hover ~ #sunglasses {
+    transform: perspective(600px) rotateX(-20deg) rotateY(-20deg);
+  }
+  .bottom.right:hover ~ #sunglasses {
+    transform: perspective(600px) rotateX(-20deg) rotateY(20deg);
+  }
+}
+#sunglasses {
+  width: 19.5rem;
+  height: 5rem;
+  position: relative;
+  transition: 0.2s;
+  transform-style: preserve-3d;
+  .lens {
+    $orange: #ECA928;
+    $yellow: #EDDE4C;
+    $pink: #FD689A;
+    $purple: #CA4DEB;
+    width: 7rem;
+    height: 5rem;
+    background: linear-gradient(135deg, transparent 15%, white 15%, white 30%, transparent 30%, transparent 36%, white 36%, white 44.5%, transparent 44.5%), linear-gradient(to bottom, $orange 0, $orange 25%, $yellow 25%, $yellow 50%, $pink 50%, $pink 75%, $purple 75%);
+    position: absolute;
+    border-bottom-left-radius: 5rem;
+    border-bottom-right-radius: 5rem;
+    border: 0.8rem solid $shades-color;
+    &:before, &:after {
+      display: block;
+      position: absolute;
+    }
+    &:before {
+      content: "\2666";
+      font-family: 'Catamaran', sans-serif;
+      color: white;
+      background-color: $shades-color;
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0.7rem;
+      line-height: 1.5rem;
+      text-align: center;
+      top: -0.8rem;
+    }
+    &:after {
+      content: '';
+      width: 2.7rem;
+      height: 2.7rem;
+      background-image: radial-gradient(circle at 0% 100%, transparent 0%, transparent 36%, $shades-color 36%, $shades-color 55%, transparent 55% );
+      top: -0.3rem;
+    }
+    @each $direction in right, left {
+      &##{$direction}-lens {
+        #{$direction}: 0;
+        @if $direction == right {
+          border-top-left-radius: 1.5rem;
+          &:after {
+            left: -2rem;
+          }
+        } @else {
+          border-top-right-radius: 1.5rem;
+          &:after {
+            transform: rotate(-90deg);
+            right: -2rem;
+          }
+        }
+        &:before {
+          #{$direction}: -2rem;
+          border-top-#{$direction}-radius: 7px;
+          border-bottom-#{$direction}-radius: 7px;
+        }
+      }
+    }
+  }
+  .arm {
+    width: 17rem;
+    height: 1.5rem;
+    background-color: $shades-color;
+    position: absolute;
+    top: 0;
+    transform: rotateY(90deg) translateX(8rem);
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    &#left-arm {
+      left: -9.5rem;
+      // z-index: -1;
+    }
+    &#right-arm {
+      right: -9.5rem;
+      // z-index: -1;
+    }
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+    &:before {
+      height: 2rem;
+      width: 3rem;
+      background-image: radial-gradient(ellipse at 0% 100%, transparent 18%, $shades-color 18%, $shades-color 70%, transparent 70%);
+      right: -3rem;
+    }
+    &:after {
+      height: 2.5rem;
+      width: 2.2rem;
+      border-radius: 50%;
+      background-color: $shades-color;
+      right: -3rem;
+      top: 52%;
+    }
+  }
+}
