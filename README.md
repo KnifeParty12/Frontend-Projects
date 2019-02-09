@@ -53,4 +53,10 @@ Took me Hella Long to even understand this xD </p>
 
 [12]. [3-D Buttons](https://github.com/KnifeParty12/Frontend-Projects/tree/master/3D-Buttons)
 <p>Posted these in Pewdiepie's Subreddit....He loved them....It's actually dope though(But can you do this!! xD)
-used only css for this however if i knew SASS life would've been Easy :( </p>
+used only css for this however if i knew SASS like a pro,life would've been Easy :( </p>
+
+[13]. [Google Loading Effect](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Google%20Loading%20Effect)
+<p>Google page Loading effect using SASS and font api from cdnjs </p>
+
+[14]. [Rotating Buttons](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Rotating%20Buttons)
+<p> Long Hail *ITALICS!!!!* </p>
