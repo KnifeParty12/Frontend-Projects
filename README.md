@@ -59,4 +59,4 @@ used only css for this however if i knew SASS like a pro,life would've been Easy
 <p>Google page Loading effect using SASS and font api from cdnjs </p>
 
 [14]. [Rotating Buttons](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Rotating%20Buttons)
-<p> Long Hail *ITALICS*! </p>
+<p> Long Hail <i>ITALICS!!!</i> </p>
