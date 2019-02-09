@@ -1,6 +1,6 @@
 # Frontend-Projects
 
-## Current Project Count - [32](https://github.com/KnifeParty12/Frontend-Projects)
+## Current Project Count - [34](https://github.com/KnifeParty12/Frontend-Projects)
 
 ## Pre-Requisites
 [1].HTML advance<br><br>
