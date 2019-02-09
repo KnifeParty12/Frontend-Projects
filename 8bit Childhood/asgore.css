@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-font-smoothing: antialiased !important;
+    -o-font-smoothing: antialiased !important;
+    text-rendering: optimizeLegibility !important;
+}
+
+@font-face {
+    font-family: 'DETERMINATION';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/225473/DTM-Mono.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MONSTER';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/225473/MonsterFriendFore.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.HUD{
+    margin-top: 15px;
+    font-family: 'MONSTER';
+    color: #FFFFFF;
+    font-size: 15pt;
+}
+
+body{
+    background-color: #000000;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.battle-screen{
+    margin-top: 85px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chat{
+    width: 575px;
+    height: 140px;
+    border: 5px solid #FFFFFF;
+    background-color: #000000;
+    margin-top: -70px;
+    z-index: 10;
+    color: #FFFFFF;
+    font-family: "DETERMINATION";
+    font-size: 20pt;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.ASGORE{
+    position: relative;
+    width: 430px;
+    height: 245px;
+    margin-left: 90px;
+    z-index: -1;
+}
+
+.upper-half,
+.lower-half,
+.right-arm,
+.forearm,
+.armor,
+.head,
+.hands-spear,
+.legs-feet,
+.cape{
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.legs-feet{
+    top: 102px;
+    left: 87px;
+    z-index: 2;
+}
+
+.hands-spear{
+    left: 20px;
+    top: -19px;
+    animation: weapon-idle 2.5s infinite;
+    z-index: 5;
+}
+
+.head{
+    top: -66px;
+    left: 123px;
+    animation: head-idle 3s infinite;
+    z-index: 4
+}
+
+.armor{
+    left: 54px;
+    top: -31px;
+    z-index: 3;
+    animation: armor-idle 3s infinite;
+}
+
+.cape{
+    left: 10px;
+    z-index: 1;
+}
+
+.forearm{
+    left: 225px;
+    z-index: 4;
+    top: 50px;
+    animation: forearm-idle 2.5s infinite;
+}
+
+.right-arm{
+    left: 225px;
+    z-index: 2;
+    top: 10px;
+    animation: rightarm-idle 3s infinite;
+}
+
+.upper-half{
+    left: 50px;
+    top: 20px;
+    z-index: 2;
+    animation: upperhalf-idle 2.5s infinite;
+}
+
+.lower-half{
+    left: 50px;
+    top: 40px;
+    z-index: 2;
+}
+
+@keyframes head-idle{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(6px);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes weapon-idle{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-6px);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes armor-idle{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(3px);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes forearm-idle{
+    0%{transform: rotateZ(-12deg);}
+    50%{ transform: rotateZ(0deg);}
+    100%{transform: rotateZ(-12deg);}
+}
+
+@keyframes rightarm-idle{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(2px);}
+    100%{transform: translateY(0);}
+}
+
+@keyframes upperhalf-idle{
+    0%{transform: translateY(0);}
+    50%{transform: translateY(-4px);}
+    100%{transform: translateY(0);}
+}
+
+
+.bar{
+    display: flex;
+    flex-grow: 1;
+}
+
+.bottom-animation{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    z-index: -100;
+}
+
+.layer-1{
+    background-color: #1e001e;
+    height: 49px;
+    border-bottom: 1px solid #3b003b;
+    animation: scale-down-1 4s infinite;
+}
+
+.layer-2{
+    background-color: #260026;
+    height: 42px;
+    border-bottom: 1px solid #460046;
+    animation: scale-down-2 4s infinite;
+}
+
+.layer-3{
+    background-color: #2e002e;
+    height: 37px;
+    border-bottom: 1px solid #510051;
+    animation: scale-down-3 4s infinite;
+}
+
+.layer-4{
+    background-color: #360036;
+    height: 32px;
+    border-bottom: 1px solid #5a005a;
+    animation: scale-down-4 4s infinite;
+}
+
+.layer-5{
+    background-color: #3e003e;
+    height: 27px;
+    border-bottom: 1px solid #620062;
+    animation: scale-down-5 4s infinite;
+}
+
+.layer-6{
+    background-color: #460046;
+    height: 22px;
+    border-bottom: 1px solid #690069;
+    animation: scale-down-6 4s infinite;
+}
+
+.layer-7{
+    background-color: #4e004e;
+    height: 18px;
+    border-bottom: 1px solid #700070;
+    animation: scale-down-7 4s infinite;
+}
+
+.layer-8{
+    background-color: #560056;
+    height: 12px;
+    border-bottom: 1px solid #750075;
+    animation: scale-down-8 4s infinite;
+}
+
+.layer-9{
+    background-color: #5e005e;
+    height: 8px;
+    border-bottom: 1px solid #790079;
+    animation: scale-down-9 4s infinite;
+}
+
+@keyframes scale-down-1{
+    0%   { height: 49px }
+    50%  { height: 8px }
+    100% { height: 49px }
+}
+
+@keyframes scale-down-2{
+    0%   { height: 42px }
+    50%  { height: 8px }
+    100% { height: 42px }
+}
+
+@keyframes scale-down-3{
+    0%   { height: 37px }
+    50%  { height: 8px }
+    100% { height: 37px }
+}
+
+@keyframes scale-down-4{
+    0%   { height: 32px }
+    50%  { height: 8px }
+    100% { height: 32px }
+}
+
+@keyframes scale-down-5{
+    0%   { height: 27px }
+    50%  { height: 8px }
+    100% { height: 27px }
+}
+
+@keyframes scale-down-6{
+    0%   { height: 22px }
+    50%  { height: 8px }
+    100% { height: 22px }
+}
+
+@keyframes scale-down-7{
+    0%   {height: 18px }
+    50%  {height: 8px }
+    100% {height: 18px }
+}
+
+@keyframes scale-down-8{
+    0%   { height: 12px }
+    50%  { height: 8px }
+    100% { height: 12px }
+}
+
+@keyframes scale-down-9{
+    0%   { height: 8px}
+    50%  { height: 4px }
+    100% { height: 8px }
+}
+
+#video{
+    position: absolute;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+}
