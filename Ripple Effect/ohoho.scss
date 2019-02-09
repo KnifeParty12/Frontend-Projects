@@ -1,0 +1,69 @@
+$color-dark: #000;
+$color-light: #fff;
+$bg-size-end: 4.2;
+$dur: .3s;
+
+html { box-sizing: border-box; height: 100%; font-size: 10px; } *, *::before, *::after { box-sizing: inherit; }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #57bd84;
+}
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+
+  &:checked + label {
+    &:after {
+      transform: scale($bg-size-end);
+    }
+  }
+}
+
+label {
+  outline: none;
+  user-select: none;
+  color: $color-dark;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.04rem;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  border-radius: .4rem;
+  border: .3rem solid $color-dark;
+  background: $color-light;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: transform $dur ease-in;
+    mix-blend-mode: difference;
+    // Gradient start values are somewhat arbitrary. But this seemed a good fit to avoid overly-blurry circle edge.
+
+
+
+    background: radial-gradient(
+                    circle at center,
+                    $color-light 24%,
+                    $color-dark 25%,
+                    $color-dark 100%);
+  }
+
+  box-shadow: 0 3px 0 0 $color-dark;
+  &:active {
+    top: 3px;
+    box-shadow: none;
+  }
+}

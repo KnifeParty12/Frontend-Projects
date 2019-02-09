@@ -1,0 +1,53 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 10px; }
+
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #57bd84; }
+
+input[type=checkbox] {
+  height: 0;
+  width: 0;
+  visibility: hidden; }
+  input[type=checkbox]:checked + label:after {
+    transform: scale(4.2); }
+
+label {
+  outline: none;
+  user-select: none;
+  color: #000;
+  font-family: 'Lato', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.04rem;
+  padding: 1.5rem 3rem;
+  cursor: pointer;
+  border-radius: .4rem;
+  border: 0.3rem solid #000;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 0 0 #000; }
+  label::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease-in;
+    mix-blend-mode: difference;
+    background: radial-gradient(circle at center, #fff 24%, #000 25%, #000 100%); }
+  label:active {
+    top: 3px;
+    box-shadow: none; }
+
+/*# sourceMappingURL=ohoho.css.map */
