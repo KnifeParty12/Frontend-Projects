@@ -1,5 +1,7 @@
 # Frontend-Projects
 
+## Current Project Count - [32](https://github.com/KnifeParty12/Frontend-Projects)
+
 ## Pre-Requisites
 [1].HTML advance<br><br>
 [2].CSS advance(including bootstrap,flexboxes)<br><br>
