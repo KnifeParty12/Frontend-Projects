@@ -1,0 +1,146 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2; }
+
+.container {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  -webkit-perspective: 2000px;
+  perspective: 2000px; }
+  .container .cube {
+    transform-style: preserve-3d;
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg);
+    width: 200px;
+    height: 200px;
+    animation: cubeadjust-hue 4.5s ease infinite; }
+    .container .cube div {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      display: block;
+      overflow: hidden; }
+      .container .cube div:before {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        margin: auto;
+        content: '';
+        top: 200px;
+        left: 0;
+        transform-origin: 0% 0%;
+        transform: rotate(0deg);
+        animation: adjust-hueintro 4.5s ease-out infinite; }
+      .container .cube div:after {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        opacity: 1;
+        margin: auto;
+        content: '';
+        top: 200px;
+        left: -100px;
+        transform-origin: 100% 0%;
+        transform: rotate(0deg);
+        animation: adjust-hueoutro 4.5s ease-out infinite; }
+    .container .cube .front {
+      background: #e84d80;
+      transform: rotateX(180deg) translateZ(-100px); }
+      .container .cube .front:before {
+        background: #524061; }
+      .container .cube .front:after {
+        background: #a9d8c7; }
+    .container .cube .back {
+      background: #a9d8c7;
+      transform: rotateX(180deg) translateZ(100px) rotate(180deg) rotateY(180deg); }
+      .container .cube .back:before {
+        background: #e84d80; }
+      .container .cube .back:after {
+        background: #524061; }
+    .container .cube .right {
+      background: #e84d80;
+      transform: rotateY(90deg) translateZ(100px) rotate(-90deg) rotateX(180deg);
+      display: block; }
+      .container .cube .right:before {
+        background: #e84d80; }
+      .container .cube .right:after {
+        background: #524061; }
+    .container .cube .left {
+      background: #a9d8c7;
+      transform: rotateY(-90deg) translateZ(100px) rotatex(180deg) rotate(270deg); }
+      .container .cube .left:before {
+        background: #e84d80; }
+      .container .cube .left:after {
+        background: #524061; }
+    .container .cube .top {
+      background: #524061;
+      transform: rotateX(90deg) translateZ(100px) rotate(-90deg) rotateY(180deg); }
+      .container .cube .top:before {
+        background: #a9d8c7;
+        top: -300px;
+        left: -100px;
+        transform-origin: 100% 100%; }
+      .container .cube .top:after {
+        background: #e84d80;
+        top: 200px;
+        left: -100px;
+        transform-origin: 100% 0%; }
+    .container .cube .bottom {
+      background: #e84d80;
+      transform: rotateX(90deg) translateZ(-100px); }
+
+@keyframes adjust-hueintro {
+  0% {
+    transform: rotate(0deg); }
+  10% {
+    filter: blur(0.5px); }
+  20% {
+    transform: rotate(-90deg); }
+  99% {
+    transform: rotate(-90deg); }
+  99.0001% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(0deg); } }
+@keyframes cubeadjust-hue {
+  0% {
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg); }
+  20% {
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg); }
+  40% {
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px) rotate(0deg); }
+  60% {
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px) rotate(0deg); }
+  80% {
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px) rotate(-90deg); }
+  99% {
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px) rotate(-90deg); }
+  99.001% {
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg); }
+  100% {
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg); } }
+@keyframes adjust-hueoutro {
+  0% {
+    transform: rotate(0deg); }
+  20% {
+    transform: rotate(0deg); }
+  40% {
+    transform: rotate(0deg); }
+  50% {
+    filter: blur(1px); }
+  60% {
+    transform: rotate(90deg); }
+  99% {
+    transform: rotate(90deg); }
+  99.001% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(0deg); } }
+
+/*# sourceMappingURL=3D%20Dube.css.map */

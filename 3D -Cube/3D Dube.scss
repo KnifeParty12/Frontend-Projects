@@ -1,0 +1,228 @@
+$size: 200px;
+$pink: #e84d80;
+$lime: #a9d8c7;
+$plum: #524061;
+
+
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+}
+
+.container{
+  width: $size;
+  height: $size;
+  margin: 0 auto;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  .cube{
+    transform-style: preserve-3d;
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg);
+    width: $size;
+    height: $size;
+    animation: cubeadjust-hue 4.5s ease infinite;
+
+    div{
+      width: $size;
+      height: $size;
+      position: absolute;
+      display: block;
+      overflow: hidden;
+
+      &:before{
+        position: absolute;
+        width: ($size * 1.5);
+        height: ($size * 1.5);
+        opacity: 1;
+        margin: auto;
+        content:'';
+        top: $size;
+        left: 0;
+        transform-origin: 0% 0%;
+        transform: rotate(0deg);
+        animation: adjust-hueintro 4.5s ease-out infinite;
+      }
+      &:after{
+        position: absolute;
+        width: ($size * 1.5);
+        height: ($size * 1.5);
+        opacity: 1;
+        margin: auto;
+        content:'';
+        top: $size;
+        left: -($size / 2);
+        transform-origin: 100% 0%;
+        transform: rotate(0deg);
+        animation: adjust-hueoutro 4.5s ease-out infinite;
+      }
+    }
+    .front{
+      background: $pink;
+      transform: rotateX(180deg) translateZ(-($size / 2));
+      &:before{
+        background: $plum;
+      }
+      &:after{
+        background: $lime;
+      }
+    }
+    .back{
+      background: $lime;
+      transform: rotateX(180deg) translateZ($size / 2) rotate(180deg) rotateY(180deg);
+      &:before{
+        background: $pink;
+      }
+      &:after{
+        background: $plum;
+      }
+    }
+    .right{
+      background: $pink;
+      transform: rotateY(90deg) translateZ(100px) rotate(-90deg) rotateX(180deg);
+      display: block;
+      &:before{
+        background: $pink;
+      }
+      &:after{
+        background: $plum;
+      }
+    }
+    .left{
+      background: $lime;
+      transform: rotateY(-90deg) translateZ(100px) rotatex(180deg) rotate(270deg);
+      &:before{
+        background: $pink;
+      }
+      &:after{
+        background: $plum;
+      }
+    }
+    .top{
+      background: $plum;
+      transform: rotateX(90deg) translateZ(100px) rotate(-90deg) rotateY(180deg);
+      &:before{
+        background: $lime;
+        top: -($size * 1.5);
+        left: -($size / 2);
+        transform-origin: 100% 100%;
+      }
+      &:after{
+        background: $pink;
+        top: $size;
+        left: -($size / 2);
+        transform-origin: 100% 0%;
+      }
+    }
+    .bottom{
+      background: $pink;
+      transform: rotateX(90deg) translateZ(-($size / 2));
+    }
+  }
+}
+
+
+
+
+
+@keyframes adjust-hueintro{
+  0%{
+    transform: rotate(0deg);
+  }
+  10%{
+    filter: blur(0.5px);
+  }
+  20%{
+    transform: rotate(-90deg);
+  }
+  // 2 SEC
+  40%{
+
+  }
+  // 3 SEC
+  60%{
+
+  }
+  // 4 SEC
+  80%{
+
+  }
+  // 	RESET
+  99%{
+    transform: rotate(-90deg);
+  }
+  99.0001%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes cubeadjust-hue{
+  0%{
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px)  rotate(0deg);
+  }
+  20%{
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px)  rotate(0deg);
+  }
+  40%{
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px)  rotate(0deg);
+  }
+  // 3 SEC
+  60%{
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px)  rotate(0deg);
+  }
+  // 4 SEC
+  80%{
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px)  rotate(-90deg);
+  }
+  // 	RESET
+  99%{
+    transform: rotateX(-35deg) rotateY(-45deg) translateZ(0px) rotate(-90deg);
+  }
+  99.001%{
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg);
+  }
+  100%{
+    transform: rotateX(-35deg) rotateY(45deg) translateZ(0px) rotate(0deg);
+  }
+}
+
+@keyframes adjust-hueoutro{
+  0%{
+    transform: rotate(0deg);
+  }
+  20%{
+    transform: rotate(0deg);
+  }
+  // 2 SEC
+  40%{
+    transform: rotate(0deg);
+  }
+  50%{
+    filter: blur(1px);
+  }
+  60%{
+    transform: rotate(90deg);
+  }
+  // 4 SEC
+  80%{
+
+  }
+  // 	RESET
+  99%{
+    transform: rotate(90deg);
+  }
+  99.001%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
