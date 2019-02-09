@@ -1,0 +1,105 @@
+
+.trapdoor {
+  -webkit-transform: translateZ(0px);
+  -webkit-font-smoothing: antialiased;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -25px;
+  width: 200px;
+  height: 50px;
+  box-shadow: inset -7px 0px 12px -8px rgba(0,0,0,0.3), inset 7px 0px 12px -8px rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.3);
+  -webkit-transition: background 400ms ease-in-out;
+  -moz-transition: background 400ms ease-in-out;
+  -ms-transition: background 400ms ease-in-out;
+  -o-transition: background 400ms ease-in-out;
+  transition: background 400ms ease-in-out;
+
+  &:hover {
+    background: #fff;
+
+    .door {
+      box-shadow: 0px 0px 10px -2px rgba(0,0,0,0.4);
+      -webkit-transform: scale(1.08);
+      -moz-transform: scale(1.08);
+      -ms-transform: scale(1.08);
+      -o-transform: scale(1.08);
+      transform: scale(1.08);
+    }
+
+    .top {
+      top: -50%;
+    }
+
+    .bottom {
+      top: 100%;
+    }
+  }
+
+  .twitter-follow-button {
+    margin-left: -77px;
+    position: absolute !important;
+    margin-top: -14px;
+    left: 50%;
+    top: 50%;
+  }
+}
+
+.top {
+  top: 0%;
+  left: 0px;
+
+  &:before {
+    top: 5px;
+  }
+}
+
+.bottom {
+  top: 50%;
+  left: 0px;
+
+  &:before {
+    top: -20px;
+  }
+}
+
+.door {
+  -webkit-transition: top 400ms, box-shadow 200ms, -webkit-transform 300ms;
+  -moz-transition: top 400ms, box-shadow 200ms, -moz-transform 300ms;
+  -ms-transition: top 400ms, box-shadow 200ms, -ms-transform 300ms;
+  -o-transition: top 400ms, box-shadow 200ms, -o-transform 300ms;
+  transition: top 400ms, box-shadow 200ms, transform 300ms;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #fff;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  z-index: 2;
+  height: 50%;
+
+  &:before {
+    font-family: 'tweet', sans-serif;
+    position: absolute;
+    margin-left: -20px;
+    font-size: 35px;
+    display: block;
+    color: #4099FF;
+    content: "\e000";
+    width: 0px;
+    height: 20px;
+    left: 52%;
+  }
+}
+
+@font-face {
+  font-family: 'tweet';
+  src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/277/tweet.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
