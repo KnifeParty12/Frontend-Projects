@@ -1,0 +1,45 @@
+html {
+  box-sizing: border-box;
+  height: 100%; }
+
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #f5f5f5; }
+
+.switch-wrap {
+  cursor: pointer;
+  background: #15273b;
+  padding: 7px;
+  width: 120px;
+  height: 67px;
+  border-radius: 33.5px; }
+  .switch-wrap input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0; }
+
+.switch {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0fr 1fr 1fr;
+  transition: .2s; }
+  .switch::after {
+    content: '';
+    border-radius: 50%;
+    background: #ccc;
+    grid-column: 2;
+    transition: background .2s; }
+
+input:checked + .switch {
+  grid-template-columns: 1fr 1fr 0fr; }
+  input:checked + .switch::after {
+    background-color: #52cf71; }
+
+/*# sourceMappingURL=Blueprint.css.map */
