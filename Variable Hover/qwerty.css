@@ -1,0 +1,98 @@
+.box {
+  margin: 5em auto;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  line-height: 10em;
+  overflow: hidden; }
+
+.box__right, .box__left, .box__top, .box__bottom, .box__center {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  text-align: center;
+  line-height: inherit;
+  transition: transform .4s ease; }
+  .box__right:before, .box__left:before, .box__top:before, .box__bottom:before, .box__center:before {
+    position: absolute;
+    content: '';
+    /*
+     *  a^2 = b^2+b^2
+     *
+     *  solve to b:
+     *
+     *  a^2         = 2b^2 | /2
+     *  a^2 / 2     =  b^2 | sqrt
+     *  a / sqrt(2) =  b
+     *
+     * Percentage:
+     * a = 100%
+     * 100 / sqrt(2) = 70.71%
+     *                 ------
+     */
+    width: 70.71%;
+    height: 70.71%;
+    transform: rotate(45deg); }
+  .box__right:hover, .box__left:hover, .box__top:hover, .box__bottom:hover, .box__center:hover {
+    transform: translateX(0);
+    z-index: 1; }
+  .box__right:hover:before, .box__left:hover:before, .box__top:hover:before, .box__bottom:hover:before, .box__center:hover:before {
+    width: 100%;
+    height: 100%;
+    transform: none; }
+
+.box__right {
+  background: blue;
+  transform: translateX(100%); }
+  .box__right:before {
+    right: 100%;
+    bottom: 0;
+    transform-origin: 100% 100%; }
+  .box__right:hover ~ .box__center {
+    transform: translateX(-100%); }
+
+.box__left {
+  background: green;
+  transform: translateX(-100%); }
+  .box__left:before {
+    left: 100%;
+    transform-origin: 0 0; }
+  .box__left:hover ~ .box__center {
+    transform: translateX(100%); }
+
+.box__top {
+  background: red;
+  transform: translateY(-100%); }
+  .box__top:before {
+    top: 100%;
+    right: 0;
+    transform-origin: 100% 0; }
+  .box__top:hover ~ .box__center {
+    transform: translateY(100%); }
+
+.box__bottom {
+  background: yellow;
+  transform: translateY(100%); }
+  .box__bottom:before {
+    bottom: 100%;
+    left: 0;
+    transform-origin: 0 100%; }
+  .box__bottom:hover ~ .box__center {
+    transform: translateY(-100%); }
+
+.box__center {
+  background: orange;
+  z-index: -1; }
+
+html,
+body {
+  height: 100%; }
+
+body {
+  font-family: Helvetica, sans-serif;
+  transform: translateZ(0); }
+
+h1 {
+  text-align: center; }
+
+/*# sourceMappingURL=qwerty.css.map */
