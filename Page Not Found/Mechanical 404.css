@@ -54,7 +54,7 @@ a{
 
 .text:nth-child(1){
     stroke: #1c234d;
-    animation-delay: -1;
+    animation-delay: -1s;
 }
 
 .text:nth-child(2){
