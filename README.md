@@ -72,4 +72,7 @@ used only css for this however if i knew SASS like a pro,life would've been Easy
  <p> Basic design for UI stretch buttons.Will Add Goeey effect after each click(SVG) :grinning: </p>
  
  [17]. [Trap Door Boi](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Trap%20Door%20Boi!)
-    
+<p> Split door opener using <b>vender-prefixed transitions</b> :octacat: 
+remember not to ask nay questions regarding these on stackoverflow,people tend to get sentimental :stuck_out_tongue_winking_eye:
+ </p>    
+
