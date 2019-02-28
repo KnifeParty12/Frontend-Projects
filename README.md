@@ -2,7 +2,7 @@
 
 ## [Checkout My Work Here!](https://knifeparty12.github.io/Frontend-Projects/#)
 
-## Current Project Count - [50](https://github.com/KnifeParty12/Frontend-Projects)
+## Current Project Count - [60](https://github.com/KnifeParty12/Frontend-Projects)
 
 ## Pre-Requisites
 [1].HTML advance<br><br>
@@ -11,6 +11,7 @@
 [4].Js and Jquery calls<br>
 
 ------------------------------------------------
+
 ### Project description
 [1]. [Burger Menu Icon](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Burger%20Menu)
 <p> Created using HTML and CSS if you don't understand the text displayed on screen,you live one <b>sed life</b> xD 
@@ -62,3 +63,13 @@ used only css for this however if i knew SASS like a pro,life would've been Easy
 
 [14]. [Rotating Buttons](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Rotating%20Buttons)
 <p> Long Hail <i>ITALICS!!!</i> </p>
+
+[15]. [Variable Hover](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Variable%20Hover)
+<p> A div which displays different colors depending on which direction you hover from.Used basic geometry to calculate values
+ for height and width(Good Self Learning Idea)</p>
+ 
+ [16]. [UI Strech Buttons](https://github.com/KnifeParty12/Frontend-Projects/tree/master/UI%20stretch%20Buttons)
+ <p> Basic design for UI stretch buttons.Will Add Goeey effect after each click(SVG) :grinning: </p>
+ 
+ [17]. [Trap Door Boi](https://github.com/KnifeParty12/Frontend-Projects/tree/master/Trap%20Door%20Boi!)
+    
