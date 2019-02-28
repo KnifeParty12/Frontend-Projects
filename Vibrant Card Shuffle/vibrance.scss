@@ -1,0 +1,45 @@
+$cardWidth: 4em;
+$cardHeight: 2*$cardWidth;
+$cards: (#ffea4b, #ffc63a, #ee9024, #ef532c, #c11943, #7e0e63);
+
+
+.deck {
+  position: absolute;
+  height: $cardHeight;
+  width: $cardWidth + 2*$cardHeight;
+  top: 50%;
+  left: 50%;
+  margin-top: -$cardHeight/2;
+  margin-left: -($cardWidth + 2*$cardHeight)/2
+}
+
+.card {
+  position: absolute;
+  left: 50%;
+  margin-left: - $cardWidth/2 ;
+  height: $cardHeight;
+  width: $cardWidth;
+  border-radius: $cardWidth/10;
+  transform-origin:   center;
+
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      background: nth($cards, $i);
+      z-index: 10-$i;
+      animation: shuffle+$i 1.9s ease-out  infinite;
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  $slowdown3: 55 + (($i - 1)*5);
+  $slowdown2: 35 + (($i - 1)*3);
+  $slowdow1: 15 + (($i - 1)*1);
+  @keyframes shuffle#{$i} {
+    0%{	transform: translateX(0) rotate(0deg) ;}
+  #{$slowdow1}% { transform: translateX(($cardHeight + ($cardWidth/2))* ((7-$i)/6)) rotate(90deg) ;}
+  #{$slowdown2}% { transform: translateX(-($cardHeight + ($cardWidth/2))* ((7-$i)/6))rotate(270deg) ;}
+  #{$slowdown3}% {transform:  translateX(0) rotate(360deg);}
+  100% {transform: translateX(0)  rotate(360deg) ;}
+}
+}
