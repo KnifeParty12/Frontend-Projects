@@ -1,0 +1,43 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    background-size: auto 100%;
+}
+
+@font-face {
+    font-family: neon;
+    src: url("Library 3 am.otf");
+}
+
+.neon-wrapper {
+    box-shadow:
+            0 0 0.1vw  0.4vw #fff7f7,
+            0 0 0.4vw  0.6vw #e97272,
+            0 0   4vw  0.4vw #e50b0b,
+            inset 0 0 1.5vw  0.4vw #e50b0b,
+            inset 0 0 0.4vw  0.2vw #e97272,
+            inset 0 0 0.5vw  0.2vw #fff7f7;
+    border-radius: 1.5rem;
+}
+.neon-text {
+    font-family:neon;
+    font-size: 14rem;
+    color: #ffd8d8;
+    padding: 0 3.5rem 0 3.5rem;
+    text-shadow:
+            .1vw 0vw .25vw #ffd8d8, .2vw 0vw .25vw #ffd8d8, .4vw 0vw .25vw #ffd8d8,
+            .1vw 0vw   0vw #f25757, .2vw 0vw   0vw #f25757, .4vw 0vw   0vw #f25757,
+            .1vw 0vw  .1vw #f25757, .2vw 0vw  .1vw #f25757, .4vw 0vw  .1vw #f25757,
+            .1vw 0vw   2vw #f25757, .2vw 0vw   2vw #f25757, .4vw 0vw   2vw #f25757,
+            .1vw 0vw   1vw #e50b0b, .2vw 0vw   1vw #e50b0b, .4vw 0vw   5vw #e50b0b,
+            .1vw 0vw   5vw #e50b0b, .2vw 0vw  20vw #e50b0b, .4vw 0vw  10vw #e50b0b,
+            .1vw 0vw  10vw #e50b0b, .2vw 0vw  30vw #e50b0b, .4vw 0vw  10vw #e50b0b;
+}
