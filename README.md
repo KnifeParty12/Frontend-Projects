@@ -20,6 +20,17 @@
 ***
 ### Recent Ones :beginner:
 
+> ### Cracked :wine_glass:
+[1]. [HTML](https://github.com/KnifeParty12/Frontend-Projects/blob/master/Cracked%20Text%20Effect/index.html)
+<p> Wrapper Div and 3 span's </p>
+
+[2]. [CSS](https://github.com/KnifeParty12/Frontend-Projects/blob/master/Cracked%20Text%20Effect/style.css)
+<p>Use of <i>Clip-Path</i> and <i>transforms</i> involving text-shadow and glow effects </p>
+
+<img src="images/cracked.gif" width=650px>
+
+***
+
 > ### Legos :game_die:
 [1]. [HTML](https://github.com/KnifeParty12/Frontend-Projects/blob/master/LEGOS/index.html)
 <p>Used Div's to create Lego pieces along with the 4 dots on each.</p>
